@@ -1,0 +1,262 @@
+:root {
+    --background-image: linear-gradient(120deg, rgba(80, 80, 80, 0.7), rgba(140, 140, 140, 0.7));
+    --background-overlay: rgba(0, 0, 0, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow: auto;
+}
+
+a {
+    font-family: inherit;
+    text-decoration: none;
+    color: white;
+}
+
+/*Menu button*/
+.menu-btn {
+    position: absolute;
+    right: 50px;
+    margin-top: 50px;
+    z-index: 9999999;
+}
+
+.menu-btn  button{
+    background-color: transparent;
+    font-size: 48px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/*Header*/
+.header {
+    position: absolute;
+    right: 0;
+    height: 0;
+    overflow: hidden;
+    width: 200px;
+    transition: all 0.5s ease-in-out;
+}
+
+.header.open{
+    height: 100vh;
+    background-color: var(--background-overlay);
+}
+
+.header nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.header nav ul li {
+    margin: 20px 0;
+}
+
+/*Homepage*/
+.homepage {
+    background: url("./background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.homepage .overlay {
+    background-image: var(--background-image);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #fff;
+    text-align: center;
+}
+
+.homepage .overlay h1{
+    text-transform: uppercase;
+    font-size: 96px;
+}
+
+.homepage .overlay p{
+    font-size: 36px;
+}
+
+.homepage .overlay ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.homepage .overlay ul li{
+    margin: 0 20px;
+}
+
+.homepage .overlay ul li a{
+    font-size: 54px;
+}
+
+/*Projects*/
+.projects{
+    background: url("./background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.projects .overlay{
+    background-image: var(--background-image);
+    display: flex;
+    min-height: 100vh;
+    color: #fff;
+}
+
+/*.projects h1{*/
+/*    padding: 50px 80px;*/
+/*}*/
+
+.projects .cards{
+    background-color: rgba(160, 160, 160, 0.7);
+    padding: 30px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 110px 50px;
+    gap: 30px;
+    width: 40rem;
+    height: 40rem;
+    flex-shrink: 0;
+    border-radius: 80px;
+    place-items: center;
+    color: white;
+    /*color: black;*/
+}
+
+.projects .cards h4{
+    font-size: 24px;
+    margin: 20px 0 10px;
+}
+
+.projects .cards p{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.projects .cards ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.projects .cards ul li > a:first-child {
+    /*background-color: grey;*/
+    color: blue;
+}
+
+/*Contacts*/
+.contacts{
+    background: url("./background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.contacts .overlay{
+    background-image: var(--background-image);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #fff;
+    text-align: center;
+}
+
+.contacts .overlay h1{
+    font-size: 48px;
+    margin-top: 30px;
+}
+
+.contacts .overlay ul{
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+@media (max-width: 992px) {
+   .homepage .overlay h1{
+       font-size: 64px;
+   }
+}
+
+@media (max-width: 500px) {
+    .menu-btn {
+        right: 30px;
+    }
+
+    .header.open{
+        width: 100vh;
+        height: 14vh;
+    }
+    .header nav ul {
+        display: flex;
+        flex-direction: inherit;
+        min-height: 17vh;
+        min-width: 143vh;
+    }
+    .header nav ul li {
+        margin: 10px;
+    }
+
+    .homepage .overlay h1{
+        font-size: 30px;
+    }
+    .homepage .overlay .p{
+        font-size: 20px;
+        margin-top: 40px;
+    }
+    .homepage .overlay ul li a{
+        font-size: 24px;
+    }
+    .contacts h1, .projects h1{
+        padding: 50px 30px;
+    }
+
+    .projects .cards {
+        width: 20rem;
+        height: 20rem;
+        padding: 50px;
+        margin-top: 150px;
+    }
+    .projects .cards h4{
+        font-size: 18px;
+    }
+    .projects .cards p{
+        font-size: 14px;
+    }
+    .projects .cards ul li > a:first-child {
+        font-size: 14px;
+    }
+}
